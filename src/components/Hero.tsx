@@ -31,7 +31,7 @@ export default function Hero() {
           приглашение на торжество
         </p>
         <h1 className="text-5xl md:text-7xl lg:text-9xl font-bold tracking-tight mb-4" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic' }}>
-          Алексей & Мария
+          Глеб & Вероника
         </h1>
         <p className="text-lg md:text-2xl opacity-90 tracking-widest font-light mt-6">
           14 июня 2025 · Подмосковье
