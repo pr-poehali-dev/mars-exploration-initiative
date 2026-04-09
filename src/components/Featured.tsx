@@ -19,7 +19,7 @@ export default function Featured() {
     <div id="programme" className="flex flex-col lg:flex-row lg:justify-between lg:items-center min-h-screen px-6 py-12 lg:py-0 bg-rose-50">
       <div className="flex-1 h-[400px] lg:h-[800px] mb-8 lg:mb-0 lg:order-2">
         <img
-          src="https://cdn.poehali.dev/projects/7c964bb9-3c9f-4251-997c-b60e7dcb9b8e/files/bb94ab41-5471-42bb-aa56-e9f33239dfcc.jpg"
+          src="https://cdn.poehali.dev/projects/7c964bb9-3c9f-4251-997c-b60e7dcb9b8e/bucket/38d34505-5d32-45a9-a836-a8ca550c1b18.jpg"
           alt="Молодожёны на закате"
           className="w-full h-full object-cover"
         />
