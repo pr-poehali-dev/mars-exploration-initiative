@@ -13,7 +13,7 @@ const dresscodeColors = [
 const faqs = [
   {
     question: "Можно ли прийти с детьми?",
-    answer: "Мы очень любим детей, и каждый ребёнок — это радость. Однако торжество будет длинным и насыщенным, поэтому мы мягко просим оценить, комфортно ли будет малышу провести весь вечер. Если вам нужна помощь с няней на этот день — дайте знать, мы постараемся помочь.",
+    answer: "Чтобы все могли как следует отдохнуть и повеселиться на нашем празднике, очень просим мам и пап приходить без маленьких деток.",
     type: "text",
   },
   {
@@ -61,7 +61,7 @@ export default function FAQ() {
                       <p className="text-black/70 text-base leading-relaxed mb-6">
                         Да! Мы будем очень рады, если вы поддержите цветовую гамму праздника. Наша палитра — тёплые земляные оттенки и приглушённая зелень:
                       </p>
-                      <div className="flex gap-3 flex-wrap mb-6">
+                      <div className="flex gap-3 flex-wrap">
                         {dresscodeColors.map((c) => (
                           <div key={c.hex} className="flex flex-col items-center gap-1">
                             <div
@@ -72,11 +72,6 @@ export default function FAQ() {
                           </div>
                         ))}
                       </div>
-                      <img
-                        src="https://cdn.poehali.dev/projects/7c964bb9-3c9f-4251-997c-b60e7dcb9b8e/bucket/09552c56-b652-4437-99ab-5357ea2a6e21.jpg"
-                        alt="Дресс-код"
-                        className="w-full max-w-md rounded object-cover"
-                      />
                     </div>
                   )}
                 </div>

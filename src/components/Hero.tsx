@@ -34,7 +34,7 @@ export default function Hero() {
           Глеб & Вероника
         </h1>
         <p className="text-lg md:text-2xl tracking-widest font-light mt-6" style={{ color: 'rgba(255,255,255,0.8)', textShadow: '0 1px 6px rgba(0,0,0,0.4)' }}>
-          14 июня 2025 · Подмосковье
+          25.09.2026
         </p>
       </div>
     </div>
