@@ -80,15 +80,7 @@ export default function FAQ() {
           ))}
         </div>
 
-        <div className="mt-14 text-center">
-          <p className="text-black/50 text-base uppercase tracking-[0.3em] mb-5">Детали торжества</p>
-          <a
-            href="#details"
-            className="inline-block border border-black text-black text-base uppercase tracking-widest px-10 py-4 hover:bg-black hover:text-white transition-colors duration-300"
-          >
-            Место и контакты
-          </a>
-        </div>
+
       </div>
     </div>
   );
