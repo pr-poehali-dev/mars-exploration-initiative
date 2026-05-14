@@ -6,6 +6,7 @@ interface Guest {
   name: string;
   attending: "yes" | "no";
   guests_count: number;
+  alcohol: string[];
   comment: string | null;
   created_at: string;
 }
@@ -107,6 +108,9 @@ export default function Admin() {
                   <p className="text-black font-semibold text-lg">{g.name}</p>
                   {g.attending === "yes" && (
                     <p className="text-black/50 text-sm">{g.guests_count} чел.</p>
+                  )}
+                  {g.alcohol && g.alcohol.length > 0 && (
+                    <p className="text-black/50 text-sm">{g.alcohol.join(", ")}</p>
                   )}
                   {g.comment && (
                     <p className="text-black/40 text-sm italic">«{g.comment}»</p>

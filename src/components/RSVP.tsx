@@ -5,7 +5,16 @@ export default function RSVP() {
   const [name, setName] = useState("");
   const [attending, setAttending] = useState<"yes" | "no" | "">("");
   const [guestsCount, setGuestsCount] = useState(1);
+  const [alcohol, setAlcohol] = useState<string[]>([]);
   const [comment, setComment] = useState("");
+
+  const alcoholOptions = ["Вино", "Шампанское", "Виски", "Коньяк", "Пиво", "Не пью"];
+
+  const toggleAlcohol = (opt: string) => {
+    setAlcohol((prev) =>
+      prev.includes(opt) ? prev.filter((a) => a !== opt) : [...prev, opt]
+    );
+  };
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -16,7 +25,7 @@ export default function RSVP() {
       const res = await fetch(func2url.rsvp, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, attending, guests_count: guestsCount, comment }),
+        body: JSON.stringify({ name, attending, guests_count: guestsCount, alcohol, comment }),
       });
       if (res.ok) {
         setStatus("success");
@@ -115,6 +124,28 @@ export default function RSVP() {
                 >
                   +
                 </button>
+              </div>
+            </div>
+          )}
+
+          {attending === "yes" && (
+            <div>
+              <label className="block text-xs uppercase tracking-widest text-black/50 mb-4">Что предпочитаете из алкоголя?</label>
+              <div className="flex flex-wrap gap-3">
+                {alcoholOptions.map((opt) => (
+                  <button
+                    key={opt}
+                    type="button"
+                    onClick={() => toggleAlcohol(opt)}
+                    className={`px-5 py-2 border text-sm uppercase tracking-widest transition-colors duration-200 ${
+                      alcohol.includes(opt)
+                        ? "bg-black text-white border-black"
+                        : "bg-transparent text-black border-black/30 hover:border-black"
+                    }`}
+                  >
+                    {opt}
+                  </button>
+                ))}
               </div>
             </div>
           )}

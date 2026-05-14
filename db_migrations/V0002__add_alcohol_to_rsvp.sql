@@ -1,0 +1,1 @@
+ALTER TABLE t_p90224569_mars_exploration_ini.rsvp ADD COLUMN IF NOT EXISTS alcohol TEXT[];

@@ -22,6 +22,7 @@ def handler(event: dict, context) -> dict:
     name = body.get('name', '').strip()
     attending = body.get('attending', '')
     guests_count = int(body.get('guests_count', 1))
+    alcohol = body.get('alcohol', [])
     comment = body.get('comment', '').strip()
 
     if not name or attending not in ('yes', 'no'):
@@ -35,8 +36,8 @@ def handler(event: dict, context) -> dict:
     conn = psycopg2.connect(os.environ['DATABASE_URL'])
     cur = conn.cursor()
     cur.execute(
-        f"INSERT INTO {schema}.rsvp (name, attending, guests_count, comment) VALUES (%s, %s, %s, %s)",
-        (name, attending, guests_count if attending == 'yes' else 0, comment or None)
+        f"INSERT INTO {schema}.rsvp (name, attending, guests_count, alcohol, comment) VALUES (%s, %s, %s, %s, %s)",
+        (name, attending, guests_count if attending == 'yes' else 0, alcohol or None, comment or None)
     )
     conn.commit()
     cur.close()
