@@ -26,7 +26,7 @@ export default function Hero() {
         <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.25) 55%, rgba(0,0,0,0) 100%)' }} />
       </motion.div>
 
-      <div className="relative z-10 text-center px-6 self-start mt-20 md:mt-28">
+      <div className="relative z-10 text-center px-6">
         <p className="text-sm md:text-base uppercase tracking-[0.4em] mb-6 font-light" style={{ color: 'rgba(255,255,255,0.85)', textShadow: '0 1px 6px rgba(0,0,0,0.4)' }}>
           приглашение на торжество
         </p>
@@ -34,7 +34,7 @@ export default function Hero() {
           Глеб & Вероника
         </h1>
         <p className="text-lg md:text-2xl tracking-widest font-light mt-6" style={{ color: 'rgba(255,255,255,0.8)', textShadow: '0 1px 6px rgba(0,0,0,0.4)' }}>
-          25.09.2026
+          11.09.2026
         </p>
       </div>
     </div>
