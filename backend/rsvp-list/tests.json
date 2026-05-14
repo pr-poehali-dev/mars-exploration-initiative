@@ -3,8 +3,7 @@
     {
       "name": "Список гостей — правильный пароль",
       "method": "GET",
-      "path": "/",
-      "headers": {"X-Admin-Password": "101122"},
+      "path": "/?password=101122",
       "expectedStatus": 200,
       "bodyMatcher": "none"
     },

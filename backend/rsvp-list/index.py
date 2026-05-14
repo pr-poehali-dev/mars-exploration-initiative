@@ -21,8 +21,8 @@ def handler(event: dict, context) -> dict:
             'body': ''
         }
 
-    headers = {k.lower(): v for k, v in event.get('headers', {}).items()}
-    password = headers.get('x-admin-password', '')
+    params = event.get('queryStringParameters') or {}
+    password = params.get('password', '')
     if password != ADMIN_PASSWORD:
         return {
             'statusCode': 401,
