@@ -55,7 +55,7 @@ export default function RSVP() {
 
         <form onSubmit={handleSubmit} className="flex flex-col gap-8">
           <div>
-            <label className="block text-xs uppercase tracking-widest text-black/50 mb-3">Ваше имя</label>
+            <label className="block text-xs uppercase tracking-widest text-black/50 mb-3">Имя и фамилия</label>
             <input
               type="text"
               value={name}
