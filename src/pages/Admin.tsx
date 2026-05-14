@@ -31,7 +31,8 @@ export default function Admin() {
         headers: { "X-Admin-Password": password },
       });
       if (res.status === 401) { setStatus("error"); return; }
-      const data = JSON.parse(await res.json());
+      const raw = await res.json();
+      const data = typeof raw === "string" ? JSON.parse(raw) : raw;
       setGuests(data.guests);
       setStats(data.stats);
       setStatus("done");
