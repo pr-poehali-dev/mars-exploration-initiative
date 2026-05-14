@@ -1,0 +1,19 @@
+{
+  "tests": [
+    {
+      "name": "Список гостей — правильный пароль",
+      "method": "GET",
+      "path": "/",
+      "headers": {"X-Admin-Password": "101122"},
+      "expectedStatus": 200,
+      "bodyMatcher": "none"
+    },
+    {
+      "name": "Список гостей — неверный пароль",
+      "method": "GET",
+      "path": "/",
+      "expectedStatus": 401,
+      "bodyMatcher": "none"
+    }
+  ]
+}
