@@ -8,7 +8,7 @@ export default function RSVP() {
   const [alcohol, setAlcohol] = useState<string[]>([]);
   const [comment, setComment] = useState("");
 
-  const alcoholOptions = ["Вино", "Шампанское", "Виски", "Коньяк", "Не пью"];
+  const alcoholOptions = ["Вино", "Шампанское", "Виски", "Коньяк", "Водка", "Не пью"];
 
   const toggleAlcohol = (opt: string) => {
     setAlcohol((prev) =>
