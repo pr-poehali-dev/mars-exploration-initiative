@@ -1,14 +1,9 @@
-import { useState } from "react";
-
 export default function Featured() {
-  const [rsvp, setRsvp] = useState<"yes" | "no" | null>(null);
-  const [submitted, setSubmitted] = useState(false);
-
   const programme = [
-    { time: "12:00", title: "Церемония бракосочетания", desc: "Торжественная регистрация в кругу самых близких" },
-    { time: "14:00", title: "Венчание", desc: "Священный обряд в старинной церкви" },
-    { time: "16:00", title: "Праздничный банкет", desc: "Ужин, тосты, живая музыка и много тепла" },
-    { time: "23:00", title: "Завершение торжества", desc: "Финальный танец и тёплые объятия на прощание" },
+    { time: "12:00", title: "Церемония бракосочетания", desc: "ул. Ленина 98" },
+    { time: "14:00", title: "Венчание", desc: "ул. Монастырская 95, Слудская церковь" },
+    { time: "16:00", title: "Праздничный банкет", desc: "ул. Чернышевского 28" },
+    { time: "23:00", title: "Завершение торжества", desc: "" },
   ];
 
   const handleSubmit = () => {
@@ -31,56 +26,14 @@ export default function Featured() {
             <div key={item.time} className="flex gap-6 items-start border-b border-black/15 pb-6">
               <span className="font-semibold text-xl min-w-[52px] text-black">{item.time}</span>
               <div>
-                <p className="font-semibold text-xl leading-tight mb-1 text-black">{item.title}</p>
-                <p className="text-black/60 text-base">{item.desc}</p>
+                <p className="font-semibold text-xl leading-tight text-black">{item.title}</p>
+                {item.desc && <p className="text-black/50 text-sm mt-1">{item.desc}</p>}
               </div>
             </div>
           ))}
         </div>
 
-        <div className="border border-black/20 p-6" style={{ backgroundColor: '#f2f5ec' }}>
-          {!submitted ? (
-            <>
-              <p className="text-black font-semibold text-2xl mb-1">Вы придёте?</p>
-              <p className="text-black/50 text-base mb-5">Просим указать ответ до 1 августа</p>
-              <div className="flex gap-3 mb-5">
-                <button
-                  onClick={() => setRsvp("yes")}
-                  className={`px-8 py-2 text-sm uppercase tracking-wide border transition-all duration-200 ${
-                    rsvp === "yes"
-                      ? "bg-black text-white border-black"
-                      : "bg-transparent text-black border-black/40 hover:border-black"
-                  }`}
-                >
-                  Да
-                </button>
-                <button
-                  onClick={() => setRsvp("no")}
-                  className={`px-8 py-2 text-sm uppercase tracking-wide border transition-all duration-200 ${
-                    rsvp === "no"
-                      ? "bg-black text-white border-black"
-                      : "bg-transparent text-black border-black/40 hover:border-black"
-                  }`}
-                >
-                  Нет
-                </button>
-              </div>
-              <button
-                onClick={handleSubmit}
-                disabled={!rsvp}
-                className="bg-black text-white px-6 py-2 text-sm uppercase tracking-wide disabled:opacity-30 hover:bg-black/80 transition-colors duration-200 cursor-pointer disabled:cursor-default"
-              >
-                Отправить ответ
-              </button>
-            </>
-          ) : (
-            <p className="text-black text-lg">
-              {rsvp === "yes"
-                ? "Спасибо! Будем вас ждать с нетерпением 🤍"
-                : "Спасибо за ответ. Будем скучать!"}
-            </p>
-          )}
-        </div>
+
       </div>
     </div>
   );
