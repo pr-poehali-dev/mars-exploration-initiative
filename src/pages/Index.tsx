@@ -3,7 +3,6 @@ import Hero from "@/components/Hero";
 import Featured from "@/components/Featured";
 import FAQ from "@/components/FAQ";
 import Promo from "@/components/Promo";
-import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
@@ -13,7 +12,6 @@ const Index = () => {
       <Featured />
       <FAQ />
       <Promo />
-      <Footer />
     </main>
   );
 };

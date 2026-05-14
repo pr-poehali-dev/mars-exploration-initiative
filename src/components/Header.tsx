@@ -14,12 +14,7 @@ export default function Header({ className }: HeaderProps) {
           >
             Программа
           </a>
-          <a
-            href="#details"
-            className="text-white hover:text-rose-200 transition-colors duration-300 uppercase text-sm tracking-wide"
-          >
-            Детали
-          </a>
+
         </nav>
       </div>
     </header>
