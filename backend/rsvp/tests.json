@@ -1,0 +1,28 @@
+{
+  "tests": [
+    {
+      "name": "RSVP - да, приду",
+      "method": "POST",
+      "path": "/",
+      "body": {"name": "Тест Гость", "attending": "yes", "guests_count": 2, "comment": "Тест"},
+      "expectedStatus": 200,
+      "bodyMatcher": "none"
+    },
+    {
+      "name": "RSVP - не приду",
+      "method": "POST",
+      "path": "/",
+      "body": {"name": "Тест Гость 2", "attending": "no"},
+      "expectedStatus": 200,
+      "bodyMatcher": "none"
+    },
+    {
+      "name": "RSVP - ошибка без имени",
+      "method": "POST",
+      "path": "/",
+      "body": {"attending": "yes"},
+      "expectedStatus": 400,
+      "bodyMatcher": "none"
+    }
+  ]
+}
