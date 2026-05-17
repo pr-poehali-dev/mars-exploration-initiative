@@ -26,13 +26,9 @@ export default function Promo() {
         </motion.div>
       </div>
 
-      <h3 className="absolute top-12 left-6 text-white uppercase z-10 text-sm md:text-base tracking-[0.4em]" style={{ fontFamily: 'Georgia, "Times New Roman", serif', letterSpacing: '0.45em', fontWeight: 400 }}>
+      <h2 className="relative z-10 text-white text-center px-6" style={{ fontFamily: "'Cormorant Garamond', serif", fontStyle: 'italic', fontWeight: 300, fontSize: 'clamp(2.5rem, 8vw, 6rem)', lineHeight: 1.2 }}>
         С любовью ждём вас
-      </h3>
-
-      <p className="absolute bottom-12 left-6 text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl max-w-xs sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl z-10 font-light leading-tight" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic' }}>
-        Этот день будет наполнен теплом, смехом и моментами, которые останутся в сердце навсегда.
-      </p>
+      </h2>
     </div>
   );
 }
