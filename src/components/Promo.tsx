@@ -26,7 +26,7 @@ export default function Promo() {
         </motion.div>
       </div>
 
-      <h3 className="absolute top-12 left-6 text-white uppercase z-10 text-sm md:text-base tracking-[0.3em] font-light">
+      <h3 className="absolute top-12 left-6 text-white uppercase z-10 text-sm md:text-base tracking-[0.4em]" style={{ fontFamily: 'Georgia, "Times New Roman", serif', letterSpacing: '0.45em', fontWeight: 400 }}>
         С любовью ждём вас
       </h3>
 
