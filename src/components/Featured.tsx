@@ -31,6 +31,11 @@ export default function Featured() {
           ))}
         </div>
 
+        <div className="rounded-2xl px-6 py-5" style={{ backgroundColor: '#d4dbc8' }}>
+          <p className="text-black/80 text-sm leading-relaxed">
+            Просим каждого взять с собой лотерейный билет: вход в банкетный зал состоится по нему. Перед входом, пожалуйста, напишите на билете свой номер телефона. Зачем? Узнаете на торжестве)
+          </p>
+        </div>
 
       </div>
     </div>
