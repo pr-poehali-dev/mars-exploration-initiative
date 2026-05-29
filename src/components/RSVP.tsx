@@ -39,13 +39,13 @@ export default function RSVP() {
 
   if (status === "success") {
     return (
-      <div className="min-h-screen flex items-center justify-center px-6" style={{ backgroundColor: '#9aa4ad' }}>
+      <div className="min-h-screen flex items-center justify-center px-6" style={{ backgroundColor: '#b8a898' }}>
         <div className="text-center max-w-md">
           <p className="text-4xl mb-6">✦</p>
           <h2 className="text-2xl font-semibold text-black mb-4" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic' }}>
             Спасибо!
           </h2>
-          <p className="text-black/60 text-lg leading-relaxed">
+          <p className="text-black/90 text-lg leading-relaxed">
             {attending === "yes"
               ? "Мы очень рады, что ты будешь с нами в этот день."
               : "Жаль, что не получится. Мы будем помнить о тебе."}
@@ -56,7 +56,7 @@ export default function RSVP() {
   }
 
   return (
-    <div id="rsvp" className="min-h-screen flex items-center justify-center px-6 py-16" style={{ backgroundColor: '#9aa4ad' }}>
+    <div id="rsvp" className="min-h-screen flex items-center justify-center px-6 py-16" style={{ backgroundColor: '#b8a898' }}>
       <div className="w-full max-w-lg">
         <p className="uppercase text-lg tracking-[0.3em] text-black font-semibold mb-12 text-center">
           Подтверждение присутствия
@@ -64,7 +64,7 @@ export default function RSVP() {
 
         <form onSubmit={handleSubmit} className="flex flex-col gap-8">
           <div>
-            <label className="block text-xs uppercase tracking-widest text-black/50 mb-3">Имя и фамилия</label>
+            <label className="block text-xs uppercase tracking-widest text-black/80 mb-3">Имя и фамилия</label>
             <input
               type="text"
               value={name}
@@ -76,7 +76,7 @@ export default function RSVP() {
           </div>
 
           <div>
-            <label className="block text-xs uppercase tracking-widest text-black/50 mb-4">Вы придёте?</label>
+            <label className="block text-xs uppercase tracking-widest text-black/80 mb-4">Вы придёте?</label>
             <div className="flex gap-4">
               <button
                 type="button"
@@ -105,7 +105,7 @@ export default function RSVP() {
 
           {attending === "yes" && (
             <div>
-              <label className="block text-xs uppercase tracking-widest text-black/50 mb-3">
+              <label className="block text-xs uppercase tracking-widest text-black/80 mb-3">
                 Сколько вас будет (включая вас)?
               </label>
               <div className="flex items-center gap-6">
@@ -130,7 +130,7 @@ export default function RSVP() {
 
           {attending === "yes" && (
             <div>
-              <label className="block text-xs uppercase tracking-widest text-black/50 mb-4">Что предпочитаете из алкоголя?</label>
+              <label className="block text-xs uppercase tracking-widest text-black/80 mb-4">Что предпочитаете из алкоголя?</label>
               <div className="flex flex-wrap gap-3">
                 {alcoholOptions.map((opt) => (
                   <button
@@ -151,7 +151,7 @@ export default function RSVP() {
           )}
 
           <div>
-            <label className="block text-xs uppercase tracking-widest text-black/50 mb-3">Комментарий (необязательно)</label>
+            <label className="block text-xs uppercase tracking-widest text-black/80 mb-3">Комментарий (необязательно)</label>
             <textarea
               value={comment}
               onChange={(e) => setComment(e.target.value)}
