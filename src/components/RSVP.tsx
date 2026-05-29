@@ -39,7 +39,7 @@ export default function RSVP() {
 
   if (status === "success") {
     return (
-      <div className="min-h-screen flex items-center justify-center px-6" style={{ backgroundColor: '#e8e0d8' }}>
+      <div className="min-h-screen flex items-center justify-center px-6" style={{ backgroundColor: '#9aa4ad' }}>
         <div className="text-center max-w-md">
           <p className="text-4xl mb-6">✦</p>
           <h2 className="text-2xl font-semibold text-black mb-4" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic' }}>
@@ -56,7 +56,7 @@ export default function RSVP() {
   }
 
   return (
-    <div id="rsvp" className="min-h-screen flex items-center justify-center px-6 py-16" style={{ backgroundColor: '#e8e0d8' }}>
+    <div id="rsvp" className="min-h-screen flex items-center justify-center px-6 py-16" style={{ backgroundColor: '#9aa4ad' }}>
       <div className="w-full max-w-lg">
         <p className="uppercase text-lg tracking-[0.3em] text-black font-semibold mb-12 text-center">
           Подтверждение присутствия
