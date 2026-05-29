@@ -32,7 +32,7 @@ export default function FAQ() {
   const [open, setOpen] = useState<number | null>(null);
 
   return (
-    <div id="faq" className="min-h-screen px-6 py-16 lg:py-24 flex flex-col items-center justify-center" style={{ backgroundColor: '#f5f2ec' }}>
+    <div id="faq" className="min-h-screen px-6 py-16 lg:py-24 flex flex-col items-center justify-center" style={{ backgroundColor: '#b8b0a4' }}>
       <div className="w-full max-w-2xl">
         <p className="uppercase text-lg tracking-[0.3em] text-black font-semibold mb-12 text-center">
           Ответы на вопросы
