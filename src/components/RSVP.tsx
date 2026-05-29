@@ -58,9 +58,10 @@ export default function RSVP() {
   return (
     <div id="rsvp" className="min-h-screen flex items-center justify-center px-6 py-16" style={{ backgroundColor: '#b8a898' }}>
       <div className="w-full max-w-lg">
-        <p className="uppercase text-lg tracking-[0.3em] text-black font-semibold mb-12 text-center">
+        <p className="uppercase text-lg tracking-[0.3em] text-black font-semibold mb-2 text-center">
           Подтверждение присутствия
         </p>
+        <p className="text-black/60 text-sm text-center mb-12">(ответ до 30 июля)</p>
 
         <form onSubmit={handleSubmit} className="flex flex-col gap-8">
           <div>
