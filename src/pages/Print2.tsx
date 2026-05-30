@@ -127,7 +127,7 @@ export default function Print2() {
 
         .back-section-title {
           font-family: 'Montserrat', sans-serif;
-          font-size: 6pt;
+          font-size: 7pt;
           letter-spacing: 0.3em;
           text-transform: uppercase;
           font-weight: 600;
@@ -146,15 +146,15 @@ export default function Print2() {
 
         .programme-time {
           font-family: 'Montserrat', sans-serif;
-          font-size: 8pt;
+          font-size: 10pt;
           font-weight: 600;
           color: #000;
-          min-width: 10mm;
+          min-width: 12mm;
         }
 
         .programme-title {
           font-family: 'Montserrat', sans-serif;
-          font-size: 8pt;
+          font-size: 10pt;
           font-weight: 600;
           color: #000;
           line-height: 1.3;
@@ -162,9 +162,9 @@ export default function Print2() {
 
         .programme-desc {
           font-family: 'Montserrat', sans-serif;
-          font-size: 6pt;
+          font-size: 7.5pt;
           color: rgba(0,0,0,0.5);
-          margin-top: 0.5mm;
+          margin-top: 1mm;
           line-height: 1.4;
         }
 
@@ -179,7 +179,7 @@ export default function Print2() {
 
         .lottery-text {
           font-family: 'Montserrat', sans-serif;
-          font-size: 6.5pt;
+          font-size: 8pt;
           color: #000;
           line-height: 1.5;
           font-weight: 500;
@@ -211,34 +211,36 @@ export default function Print2() {
 
         .dresscode-bar-colors {
           display: flex;
-          gap: 2mm;
+          gap: 2.5mm;
           align-items: center;
-          flex-wrap: wrap;
+          flex-wrap: nowrap;
         }
 
         .dresscode-bar-swatch {
           display: flex;
           flex-direction: column;
           align-items: center;
-          gap: 0.8mm;
+          gap: 1mm;
         }
 
         .dresscode-bar-circle {
-          width: 5mm;
-          height: 5mm;
+          width: 6mm;
+          height: 6mm;
           border-radius: 50%;
           border: 0.5px solid rgba(0,0,0,0.1);
           -webkit-print-color-adjust: exact;
           print-color-adjust: exact;
+          flex-shrink: 0;
         }
 
         .dresscode-bar-name {
           font-family: 'Montserrat', sans-serif;
-          font-size: 4pt;
+          font-size: 4.5pt;
           color: rgba(0,0,0,0.55);
           text-align: center;
           line-height: 1.2;
-          max-width: 8mm;
+          max-width: 10mm;
+          white-space: nowrap;
         }
 
         @media print {
