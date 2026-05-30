@@ -254,9 +254,23 @@ export default function Print2() {
         }
 
         @media print {
-          @page { size: A5 portrait; margin: 0; }
-          body { background: white; }
-          .page { margin: 0; }
+          @page {
+            size: 148mm 210mm;
+            margin: 0;
+          }
+          html, body {
+            width: 148mm;
+            height: 210mm;
+            margin: 0 !important;
+            padding: 0 !important;
+            background: white;
+          }
+          .page {
+            width: 148mm !important;
+            height: 210mm !important;
+            margin: 0 !important;
+            padding: 0 !important;
+          }
           .no-print { display: none !important; }
           * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
         }

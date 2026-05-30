@@ -110,6 +110,8 @@
     position: static !important;
     background: white !important;
     overflow: visible !important;
+    padding: 0 !important;
+    margin: 0 !important;
   }
   .no-print {
     display: none !important;
