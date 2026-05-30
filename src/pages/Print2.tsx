@@ -1,3 +1,13 @@
+const dresscodeColors = [
+  { hex: "#3b2e27", label: "Тёмный шоколад" },
+  { hex: "#5c4033", label: "Кофе" },
+  { hex: "#a67c5b", label: "Карамель" },
+  { hex: "#d4c4a8", label: "Светлый беж" },
+  { hex: "#c8bfa8", label: "Песок" },
+  { hex: "#a8b89a", label: "Шалфей" },
+  { hex: "#6b7c5e", label: "Оливка" },
+];
+
 export default function Print2() {
   const programme = [
     { time: "12:30", title: "Церемония бракосочетания", desc: "ул. Ленина 98" },
@@ -175,6 +185,62 @@ export default function Print2() {
           font-weight: 500;
         }
 
+        .dresscode-bar {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          background-color: #b0baa4;
+          padding: 3mm 9mm;
+          display: flex;
+          align-items: center;
+          gap: 4mm;
+          -webkit-print-color-adjust: exact;
+          print-color-adjust: exact;
+        }
+
+        .dresscode-bar-label {
+          font-family: 'Montserrat', sans-serif;
+          font-size: 5.5pt;
+          letter-spacing: 0.2em;
+          text-transform: uppercase;
+          font-weight: 600;
+          color: #000;
+          white-space: nowrap;
+        }
+
+        .dresscode-bar-colors {
+          display: flex;
+          gap: 2mm;
+          align-items: center;
+          flex-wrap: wrap;
+        }
+
+        .dresscode-bar-swatch {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 0.8mm;
+        }
+
+        .dresscode-bar-circle {
+          width: 5mm;
+          height: 5mm;
+          border-radius: 50%;
+          border: 0.5px solid rgba(0,0,0,0.1);
+          -webkit-print-color-adjust: exact;
+          print-color-adjust: exact;
+        }
+
+        .dresscode-bar-name {
+          font-family: 'Montserrat', sans-serif;
+          font-size: 4pt;
+          color: rgba(0,0,0,0.55);
+          text-align: center;
+          line-height: 1.2;
+          max-width: 8mm;
+        }
+
         @media print {
           @page { size: A5 portrait; margin: 0; }
           body { background: white; }
@@ -206,7 +272,7 @@ export default function Print2() {
       </div>
 
       {/* Страница 2 — оборотная */}
-      <div className="page page-back">
+      <div className="page page-back" style={{ paddingBottom: '18mm' }}>
         <div className="back-left">
           <p className="back-section-title">Программа торжества</p>
           <div>
@@ -227,6 +293,17 @@ export default function Print2() {
           </div>
         </div>
         <div className="back-right" />
+        <div className="dresscode-bar">
+          <span className="dresscode-bar-label">Дресс-код</span>
+          <div className="dresscode-bar-colors">
+            {dresscodeColors.map((c) => (
+              <div key={c.hex} className="dresscode-bar-swatch">
+                <div className="dresscode-bar-circle" style={{ backgroundColor: c.hex }} />
+                <span className="dresscode-bar-name">{c.label}</span>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </>
   );
