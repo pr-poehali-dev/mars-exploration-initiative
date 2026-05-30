@@ -25,13 +25,21 @@ export default function Print2() {
         body { background: #888; }
 
         .page {
-          width: 148mm;
-          height: 210mm;
-          margin: 0 auto 12mm;
+          width: 559px;
+          height: 794px;
+          margin: 0 auto 24px;
           position: relative;
           overflow: hidden;
           page-break-after: always;
           break-after: page;
+        }
+
+        @media print {
+          .page {
+            width: 148mm;
+            height: 210mm;
+            margin: 0;
+          }
         }
 
         /* ——— СТРАНИЦА 1 ——— */
@@ -276,7 +284,7 @@ export default function Print2() {
       </div>
 
       {/* Страница 2 — оборотная */}
-      <div className="page page-back" style={{ paddingBottom: '18mm' }}>
+      <div className="page page-back">
         <div className="back-left">
           <p className="back-section-title">Программа торжества</p>
           <div>
