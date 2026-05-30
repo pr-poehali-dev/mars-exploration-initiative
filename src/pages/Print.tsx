@@ -29,7 +29,7 @@ export default function Print() {
           flex-direction: column;
           align-items: center;
           justify-content: space-between;
-          padding: 12mm 10mm 10mm;
+          padding: 8mm 10mm 8mm;
         }
 
         .corner {
@@ -53,12 +53,12 @@ export default function Print() {
           letter-spacing: 0.25em;
           text-transform: uppercase;
           color: #a67c5b;
-          margin-bottom: 5mm;
+          margin-bottom: 3mm;
         }
 
         .invite-names {
           font-family: 'Cormorant Garamond', Georgia, serif;
-          font-size: 36pt;
+          font-size: 30pt;
           font-weight: 300;
           font-style: italic;
           color: #3b2e27;
@@ -66,10 +66,10 @@ export default function Print() {
         }
 
         .invite-ampersand {
-          font-size: 28pt;
+          font-size: 22pt;
           color: #a67c5b;
           display: block;
-          margin: 1mm 0;
+          margin: 0.5mm 0;
         }
 
         .divider {
@@ -77,12 +77,12 @@ export default function Print() {
           height: 1px;
           background: #a67c5b;
           opacity: 0.4;
-          margin: 5mm auto;
+          margin: 3mm auto;
         }
 
         .invite-date {
           font-family: 'Cormorant Garamond', Georgia, serif;
-          font-size: 18pt;
+          font-size: 15pt;
           font-weight: 400;
           color: #3b2e27;
           letter-spacing: 0.15em;
@@ -99,7 +99,7 @@ export default function Print() {
           display: flex;
           align-items: baseline;
           gap: 3mm;
-          margin-bottom: 2.5mm;
+          margin-bottom: 1.5mm;
         }
 
         .schedule-time {
@@ -255,7 +255,7 @@ export default function Print() {
           <div style={{ width: '100%', display: 'flex', justifyContent: 'center', marginBottom: '3mm' }}>
             <img
               src="https://cdn.poehali.dev/projects/7c964bb9-3c9f-4251-997c-b60e7dcb9b8e/bucket/494d948c-24cc-4260-a06b-55b477cb1c77.jpg"
-              style={{ width: '50mm', height: '34mm', objectFit: 'cover', objectPosition: 'center top', borderRadius: '1mm' }}
+              style={{ width: '60mm', height: '40mm', objectFit: 'cover', objectPosition: 'center top', borderRadius: '1mm' }}
               alt=""
             />
           </div>
