@@ -1,0 +1,233 @@
+export default function Print2() {
+  const programme = [
+    { time: "12:30", title: "Церемония бракосочетания", desc: "ул. Ленина 98" },
+    { time: "14:00", title: "Welcome-фуршет", desc: "ул. Архитектора Свиязева 35, банкетный зал «Венеция»" },
+    { time: "15:00", title: "Праздничный банкет", desc: "ул. Архитектора Свиязева 35, банкетный зал «Венеция»" },
+  ];
+
+  return (
+    <>
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&family=Montserrat:wght@300;400;500;600&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body { background: #888; }
+
+        .page {
+          width: 148mm;
+          height: 210mm;
+          margin: 0 auto 12mm;
+          position: relative;
+          overflow: hidden;
+        }
+
+        /* ——— СТРАНИЦА 1 ——— */
+        .page-front {
+          background: #1a1a1a;
+        }
+
+        .page-front .bg-photo {
+          position: absolute;
+          inset: 0;
+          background-image: url('https://cdn.poehali.dev/projects/7c964bb9-3c9f-4251-997c-b60e7dcb9b8e/bucket/e99b8781-80de-4f77-9a69-26df3eb6643b.jpg');
+          background-size: cover;
+          background-position: center top;
+          -webkit-print-color-adjust: exact;
+          print-color-adjust: exact;
+        }
+
+        .page-front .bg-overlay {
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(to bottom, rgba(0,0,0,0.62) 0%, rgba(0,0,0,0.22) 55%, rgba(0,0,0,0.05) 100%);
+          -webkit-print-color-adjust: exact;
+          print-color-adjust: exact;
+        }
+
+        .page-front .content {
+          position: relative;
+          z-index: 10;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          padding: 12mm 10mm;
+        }
+
+        .front-label {
+          font-family: 'Montserrat', sans-serif;
+          font-size: 7pt;
+          letter-spacing: 0.4em;
+          text-transform: uppercase;
+          color: rgba(255,255,255,0.85);
+          text-shadow: 0 1px 6px rgba(0,0,0,0.4);
+          margin-bottom: 6mm;
+        }
+
+        .front-names {
+          font-family: 'Cormorant Garamond', Georgia, serif;
+          font-size: 48pt;
+          font-weight: 700;
+          font-style: italic;
+          color: #fff;
+          text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+          line-height: 1.05;
+          letter-spacing: -0.01em;
+        }
+
+        .front-date {
+          font-family: 'Montserrat', sans-serif;
+          font-size: 13pt;
+          letter-spacing: 0.3em;
+          font-weight: 300;
+          color: rgba(255,255,255,0.8);
+          text-shadow: 0 1px 6px rgba(0,0,0,0.4);
+          margin-top: 6mm;
+        }
+
+        /* ——— СТРАНИЦА 2 ——— */
+        .page-back {
+          background-color: #c8d0be;
+          display: flex;
+          flex-direction: row;
+          -webkit-print-color-adjust: exact;
+          print-color-adjust: exact;
+        }
+
+        .back-left {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          padding: 10mm 7mm 10mm 9mm;
+        }
+
+        .back-right {
+          width: 55mm;
+          flex-shrink: 0;
+          background-image: url('https://cdn.poehali.dev/projects/7c964bb9-3c9f-4251-997c-b60e7dcb9b8e/bucket/38d34505-5d32-45a9-a836-a8ca550c1b18.jpg');
+          background-size: cover;
+          background-position: center;
+          -webkit-print-color-adjust: exact;
+          print-color-adjust: exact;
+        }
+
+        .back-section-title {
+          font-family: 'Montserrat', sans-serif;
+          font-size: 6pt;
+          letter-spacing: 0.3em;
+          text-transform: uppercase;
+          font-weight: 600;
+          color: #000;
+          margin-bottom: 5mm;
+        }
+
+        .programme-item {
+          display: flex;
+          gap: 4mm;
+          align-items: flex-start;
+          border-bottom: 0.5px solid rgba(0,0,0,0.15);
+          padding-bottom: 4mm;
+          margin-bottom: 4mm;
+        }
+
+        .programme-time {
+          font-family: 'Montserrat', sans-serif;
+          font-size: 8pt;
+          font-weight: 600;
+          color: #000;
+          min-width: 10mm;
+        }
+
+        .programme-title {
+          font-family: 'Montserrat', sans-serif;
+          font-size: 8pt;
+          font-weight: 600;
+          color: #000;
+          line-height: 1.3;
+        }
+
+        .programme-desc {
+          font-family: 'Montserrat', sans-serif;
+          font-size: 6pt;
+          color: rgba(0,0,0,0.5);
+          margin-top: 0.5mm;
+          line-height: 1.4;
+        }
+
+        .lottery-box {
+          border-radius: 3mm;
+          padding: 4mm 5mm;
+          margin-top: 2mm;
+          -webkit-print-color-adjust: exact;
+          print-color-adjust: exact;
+          background-color: #b0baa4;
+        }
+
+        .lottery-text {
+          font-family: 'Montserrat', sans-serif;
+          font-size: 6.5pt;
+          color: #000;
+          line-height: 1.5;
+          font-weight: 500;
+        }
+
+        @media print {
+          @page { size: A5 portrait; margin: 0; }
+          body { background: white; }
+          .page { margin: 0; }
+          .no-print { display: none !important; }
+          * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+        }
+      `}</style>
+
+      <div className="no-print" style={{ textAlign: 'center', padding: '16px', fontFamily: 'sans-serif', fontSize: '14px', color: '#fff', background: '#555' }}>
+        <button
+          onClick={() => window.print()}
+          style={{ padding: '10px 28px', background: '#3b2e27', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer', fontSize: '14px', letterSpacing: '0.1em' }}
+        >
+          Распечатать / Сохранить PDF
+        </button>
+        <p style={{ marginTop: '8px', fontSize: '12px' }}>2 страницы A5 · Двусторонняя печать · Выберите «Без полей»</p>
+      </div>
+
+      {/* Страница 1 — лицевая */}
+      <div className="page page-front">
+        <div className="bg-photo" />
+        <div className="bg-overlay" />
+        <div className="content">
+          <p className="front-label">приглашение на торжество</p>
+          <h1 className="front-names">Глеб & Вероника</h1>
+          <p className="front-date">11.09.2026</p>
+        </div>
+      </div>
+
+      {/* Страница 2 — оборотная */}
+      <div className="page page-back">
+        <div className="back-left">
+          <p className="back-section-title">Программа торжества</p>
+          <div>
+            {programme.map((item) => (
+              <div key={item.time} className="programme-item">
+                <span className="programme-time">{item.time}</span>
+                <div>
+                  <p className="programme-title">{item.title}</p>
+                  {item.desc && <p className="programme-desc">{item.desc}</p>}
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="lottery-box">
+            <p className="lottery-text">
+              Просим каждого взять с собой лотерейный билет: вход в банкетный зал состоится по нему. Перед входом, пожалуйста, напишите на билете свой номер телефона. Зачем? Узнаете на торжестве)
+            </p>
+          </div>
+        </div>
+        <div className="back-right" />
+      </div>
+    </>
+  );
+}
