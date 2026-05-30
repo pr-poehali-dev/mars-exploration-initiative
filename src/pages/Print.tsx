@@ -190,6 +190,7 @@ export default function Print() {
           body { background: white; }
           .invite-page { margin: 0; }
           .no-print { display: none !important; }
+          * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
         }
       `}</style>
 
@@ -252,13 +253,17 @@ export default function Print() {
         </div>
 
         <div className="invite-bottom">
-          <div style={{ width: '100%', display: 'flex', justifyContent: 'center', marginBottom: '3mm' }}>
-            <img
-              src="https://cdn.poehali.dev/projects/7c964bb9-3c9f-4251-997c-b60e7dcb9b8e/bucket/494d948c-24cc-4260-a06b-55b477cb1c77.jpg"
-              style={{ width: '60mm', height: '40mm', objectFit: 'cover', objectPosition: 'center top', borderRadius: '1mm' }}
-              alt=""
-            />
-          </div>
+          <div style={{
+            width: '60mm',
+            height: '40mm',
+            margin: '0 auto 3mm',
+            borderRadius: '1mm',
+            backgroundImage: 'url(https://cdn.poehali.dev/projects/7c964bb9-3c9f-4251-997c-b60e7dcb9b8e/bucket/494d948c-24cc-4260-a06b-55b477cb1c77.jpg)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center top',
+            WebkitPrintColorAdjust: 'exact',
+            printColorAdjust: 'exact',
+          }} />
           <div className="divider" />
           <p className="dresscode-label">дресс-код</p>
           <div className="dresscode-colors">
