@@ -252,6 +252,13 @@ export default function Print() {
         </div>
 
         <div className="invite-bottom">
+          <div style={{ width: '100%', display: 'flex', justifyContent: 'center', marginBottom: '3mm' }}>
+            <img
+              src="https://cdn.poehali.dev/projects/7c964bb9-3c9f-4251-997c-b60e7dcb9b8e/bucket/494d948c-24cc-4260-a06b-55b477cb1c77.jpg"
+              style={{ width: '50mm', height: '34mm', objectFit: 'cover', objectPosition: 'center top', borderRadius: '1mm' }}
+              alt=""
+            />
+          </div>
           <div className="divider" />
           <p className="dresscode-label">дресс-код</p>
           <div className="dresscode-colors">
