@@ -21,7 +21,7 @@ export default function Print() {
         .invite-page {
           width: 148mm;
           height: 210mm;
-          background: #f5f0eb;
+          background: #e8ede0;
           margin: 0 auto;
           position: relative;
           overflow: hidden;
