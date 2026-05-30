@@ -30,6 +30,8 @@ export default function Print2() {
           margin: 0 auto 12mm;
           position: relative;
           overflow: hidden;
+          page-break-after: always;
+          break-after: page;
         }
 
         /* ——— СТРАНИЦА 1 ——— */
