@@ -204,7 +204,7 @@ export default function Print() {
         <p style={{ marginTop: '8px', fontSize: '12px' }}>Формат A5 · При печати выберите «Без полей»</p>
       </div>
 
-      <div className="invite-page">
+      <div className="invite-page" style={{ background: '#e8ede0' }}>
         <div className="corner corner-tl" />
         <div className="corner corner-tr" />
         <div className="corner corner-bl" />
