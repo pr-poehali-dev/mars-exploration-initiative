@@ -7,7 +7,7 @@ ADMIN_PASSWORD = "101122"
 
 
 def handler(event: dict, context) -> dict:
-    """Возвращает список ответов гостей (защищено паролем)"""
+    """Возвращает список ответов гостей со статистикой алкоголя (защищено паролем)"""
 
     if event.get('httpMethod') == 'OPTIONS':
         return {

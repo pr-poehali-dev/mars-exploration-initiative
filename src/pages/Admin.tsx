@@ -37,7 +37,8 @@ export default function Admin() {
       const res = await fetch(`${func2url["rsvp-list"]}?password=${encodeURIComponent(password)}`);
       if (res.status === 401) { setStatus("error"); return; }
       const raw = await res.json();
-      const data = typeof raw === "string" ? JSON.parse(raw) : raw;
+      let data = typeof raw === "string" ? JSON.parse(raw) : raw;
+      if (data.body) data = typeof data.body === "string" ? JSON.parse(data.body) : data.body;
       setGuests(data.guests);
       setStats(data.stats);
       setStatus("done");
