@@ -57,6 +57,22 @@ def handler(event: dict, context) -> dict:
     total_no = sum(1 for g in guests if g['attending'] == 'no')
     total_people = sum(g['guests_count'] for g in guests if g['attending'] == 'yes')
 
+    alcohol_counts = {}
+    for g in guests:
+        if g['attending'] == 'yes':
+            for drink in g['alcohol']:
+                alcohol_counts[drink] = alcohol_counts.get(drink, 0) + 1
+
+    total_alcohol_answers = sum(alcohol_counts.values())
+    alcohol_stats = [
+        {
+            'name': drink,
+            'count': count,
+            'percent': round(count / total_alcohol_answers * 100) if total_alcohol_answers > 0 else 0
+        }
+        for drink, count in sorted(alcohol_counts.items(), key=lambda x: -x[1])
+    ]
+
     return {
         'statusCode': 200,
         'headers': {'Access-Control-Allow-Origin': '*'},
@@ -65,7 +81,8 @@ def handler(event: dict, context) -> dict:
             'stats': {
                 'total_yes': total_yes,
                 'total_no': total_no,
-                'total_people': total_people
+                'total_people': total_people,
+                'alcohol': alcohol_stats
             }
         }, ensure_ascii=False)
     }

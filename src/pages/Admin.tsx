@@ -11,10 +11,17 @@ interface Guest {
   created_at: string;
 }
 
+interface AlcoholStat {
+  name: string;
+  count: number;
+  percent: number;
+}
+
 interface Stats {
   total_yes: number;
   total_no: number;
   total_people: number;
+  alcohol: AlcoholStat[];
 }
 
 export default function Admin() {
@@ -81,20 +88,46 @@ export default function Admin() {
         </p>
 
         {stats && (
-          <div className="flex gap-6 mb-10 flex-wrap">
-            <div className="flex-1 min-w-[120px] border border-black/15 p-5 text-center">
-              <p className="text-3xl font-light text-black">{stats.total_yes}</p>
-              <p className="text-xs uppercase tracking-widest text-black/50 mt-1">Придут</p>
+          <>
+            <div className="flex gap-6 mb-8 flex-wrap">
+              <div className="flex-1 min-w-[120px] border border-black/15 p-5 text-center">
+                <p className="text-3xl font-light text-black">{stats.total_yes}</p>
+                <p className="text-xs uppercase tracking-widest text-black/50 mt-1">Придут</p>
+              </div>
+              <div className="flex-1 min-w-[120px] border border-black/15 p-5 text-center">
+                <p className="text-3xl font-light text-black">{stats.total_people}</p>
+                <p className="text-xs uppercase tracking-widest text-black/50 mt-1">Человек всего</p>
+              </div>
+              <div className="flex-1 min-w-[120px] border border-black/15 p-5 text-center">
+                <p className="text-3xl font-light text-black">{stats.total_no}</p>
+                <p className="text-xs uppercase tracking-widest text-black/50 mt-1">Не придут</p>
+              </div>
             </div>
-            <div className="flex-1 min-w-[120px] border border-black/15 p-5 text-center">
-              <p className="text-3xl font-light text-black">{stats.total_people}</p>
-              <p className="text-xs uppercase tracking-widest text-black/50 mt-1">Человек всего</p>
-            </div>
-            <div className="flex-1 min-w-[120px] border border-black/15 p-5 text-center">
-              <p className="text-3xl font-light text-black">{stats.total_no}</p>
-              <p className="text-xs uppercase tracking-widest text-black/50 mt-1">Не придут</p>
-            </div>
-          </div>
+
+            {stats.alcohol && stats.alcohol.length > 0 && (
+              <div className="border border-black/15 p-6 mb-10">
+                <p className="text-xs uppercase tracking-widest text-black/50 mb-5">Алкоголь</p>
+                <div className="flex flex-col gap-3">
+                  {stats.alcohol.map((item) => (
+                    <div key={item.name}>
+                      <div className="flex justify-between items-baseline mb-1">
+                        <span className="text-sm text-black">{item.name}</span>
+                        <span className="text-sm text-black/50 tabular-nums">
+                          {item.count} чел. · {item.percent}%
+                        </span>
+                      </div>
+                      <div className="w-full h-1 bg-black/10 rounded-full overflow-hidden">
+                        <div
+                          className="h-full bg-black/40 rounded-full transition-all duration-500"
+                          style={{ width: `${item.percent}%` }}
+                        />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+          </>
         )}
 
         {guests.length === 0 ? (
