@@ -1,0 +1,1 @@
+UPDATE t_p90224569_mars_exploration_ini.rsvp SET attending = 'test_ignore' WHERE name = '__test_check__';
