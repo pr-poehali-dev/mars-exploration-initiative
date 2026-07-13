@@ -245,6 +245,14 @@ export default function Print() {
               <span className="schedule-time">15:00</span>
               <span className="schedule-dot" />
               <span className="schedule-text">
+                Торжественная церемония
+                <span className="schedule-place">банкетный зал «Венеция», ул. Архитектора Свиязева, 35</span>
+              </span>
+            </div>
+            <div className="schedule-item">
+              <span className="schedule-time">15:30</span>
+              <span className="schedule-dot" />
+              <span className="schedule-text">
                 Праздничный банкет
                 <span className="schedule-place">банкетный зал «Венеция», ул. Архитектора Свиязева, 35</span>
               </span>
