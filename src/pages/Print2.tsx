@@ -26,12 +26,12 @@ export default function Print2() {
 
         .page {
           width: 559px;
-          min-height: 794px;
+          height: 745px;
           margin: 0 auto 24px;
           position: relative;
           overflow: hidden;
-          background-color: #ece7dc;
-          background-image: url('https://cdn.poehali.dev/projects/7c964bb9-3c9f-4251-997c-b60e7dcb9b8e/bucket/0f796cec-3b18-4610-88df-42f66d4a026a.png');
+          background-color: #e8e2d6;
+          background-image: url('https://cdn.poehali.dev/projects/7c964bb9-3c9f-4251-997c-b60e7dcb9b8e/bucket/79b1a6e8-6264-4e39-ae3e-ccf694d5acf6.jpg');
           background-size: cover;
           background-position: center;
           -webkit-print-color-adjust: exact;
@@ -47,52 +47,58 @@ export default function Print2() {
         }
 
         .invite-single {
+          position: absolute;
+          top: 15%;
+          left: 20%;
+          right: 20%;
+          bottom: 15%;
           display: flex;
           flex-direction: column;
+          justify-content: center;
         }
 
         .invite-text-block {
-          padding: 26mm 13mm 20mm;
+          padding: 0;
         }
 
         .letter-greeting {
           font-family: 'Cormorant Garamond', Georgia, serif;
-          font-size: 15pt;
+          font-size: 12pt;
           font-weight: 600;
           font-style: italic;
-          color: #3b2e27;
-          margin-bottom: 3mm;
+          color: #fdfaf3;
+          margin-bottom: 2mm;
         }
 
         .letter-text {
           font-family: 'Montserrat', sans-serif;
-          font-size: 7pt;
-          line-height: 1.5;
-          color: #3b2e27;
-          margin-bottom: 2.5mm;
+          font-size: 5.8pt;
+          line-height: 1.4;
+          color: rgba(253,250,243,0.92);
+          margin-bottom: 1.5mm;
         }
 
         .letter-detail {
           font-family: 'Montserrat', sans-serif;
-          font-size: 7.5pt;
+          font-size: 6pt;
           font-weight: 600;
-          line-height: 1.5;
-          color: #3b2e27;
-          margin-bottom: 1.5mm;
+          line-height: 1.4;
+          color: #fdfaf3;
+          margin-bottom: 1mm;
         }
 
         .key-info-box {
-          background-color: rgba(255,255,255,0.75);
+          background-color: rgba(0,0,0,0.18);
           border-radius: 2mm;
-          padding: 4mm 5mm;
-          margin: 3mm 0 4mm;
+          padding: 2.5mm 3mm;
+          margin: 2mm 0 2.5mm;
           -webkit-print-color-adjust: exact;
           print-color-adjust: exact;
         }
 
         .key-info-box .letter-detail {
-          font-size: 8pt;
-          margin-bottom: 2mm;
+          font-size: 6pt;
+          margin-bottom: 1.2mm;
         }
 
         .key-info-box .letter-detail:last-child {
@@ -101,68 +107,68 @@ export default function Print2() {
 
         .letter-subheading {
           font-family: 'Montserrat', sans-serif;
-          font-size: 8pt;
+          font-size: 6.5pt;
           font-weight: 600;
           letter-spacing: 0.15em;
           text-transform: uppercase;
-          color: #3b2e27;
-          margin-bottom: 2.5mm;
+          color: #fdfaf3;
+          margin-bottom: 1.5mm;
         }
 
         .timing-item {
           display: flex;
           gap: 2.5mm;
           align-items: baseline;
-          margin-bottom: 2mm;
+          margin-bottom: 1.2mm;
         }
 
         .timing-time {
           font-family: 'Montserrat', sans-serif;
-          font-size: 7.5pt;
-          font-weight: 600;
-          color: #a67c5b;
-          min-width: 10mm;
+          font-size: 6pt;
+          font-weight: 700;
+          color: #e6d5a8;
+          min-width: 9mm;
           text-align: right;
           flex-shrink: 0;
         }
 
         .timing-text {
           font-family: 'Montserrat', sans-serif;
-          font-size: 7pt;
-          line-height: 1.5;
-          color: #3b2e27;
+          font-size: 5.8pt;
+          line-height: 1.4;
+          color: rgba(253,250,243,0.92);
         }
 
         .letter-closing {
           font-family: 'Montserrat', sans-serif;
-          font-size: 7.5pt;
+          font-size: 6pt;
           font-weight: 600;
-          color: #3b2e27;
-          margin-top: 2mm;
-          margin-bottom: 1.5mm;
+          color: #fdfaf3;
+          margin-top: 1.2mm;
+          margin-bottom: 1mm;
         }
 
         .letter-signature {
           font-family: 'Cormorant Garamond', Georgia, serif;
-          font-size: 11pt;
+          font-size: 10pt;
           font-style: italic;
-          color: #3b2e27;
-          line-height: 1.3;
+          color: #fdfaf3;
+          line-height: 1.25;
         }
 
         .divider {
-          width: 20mm;
+          width: 18mm;
           height: 1px;
-          background: #a67c5b;
+          background: #fdfaf3;
           opacity: 0.4;
-          margin: 3mm 0;
+          margin: 2mm 0;
         }
 
         .dresscode-bar {
           display: flex;
           align-items: center;
           gap: 3mm;
-          margin-top: 4mm;
+          margin-top: 2.5mm;
         }
 
         .dresscode-bar-label {
@@ -171,7 +177,7 @@ export default function Print2() {
           letter-spacing: 0.2em;
           text-transform: uppercase;
           font-weight: 600;
-          color: #3b2e27;
+          color: #fdfaf3;
           white-space: nowrap;
         }
 
@@ -190,10 +196,10 @@ export default function Print2() {
         }
 
         .dresscode-bar-circle {
-          width: 6mm;
-          height: 6mm;
+          width: 5.5mm;
+          height: 5.5mm;
           border-radius: 50%;
-          border: 0.5px solid rgba(0,0,0,0.1);
+          border: 0.5px solid rgba(255,255,255,0.4);
           -webkit-print-color-adjust: exact;
           print-color-adjust: exact;
           flex-shrink: 0;
@@ -202,7 +208,7 @@ export default function Print2() {
         .dresscode-bar-name {
           font-family: 'Montserrat', sans-serif;
           font-size: 4.5pt;
-          color: rgba(0,0,0,0.55);
+          color: rgba(253,250,243,0.8);
           text-align: center;
           line-height: 1.2;
           max-width: 10mm;
