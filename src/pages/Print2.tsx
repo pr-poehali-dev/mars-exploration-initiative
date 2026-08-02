@@ -8,14 +8,13 @@ const dresscodeColors = [
   { hex: "#6b7c5e", label: "Оливка" },
 ];
 
-export default function Print2() {
-  const programme = [
-    { time: "12:30", title: "Церемония бракосочетания", desc: "ул. Ленина 98" },
-    { time: "14:00", title: "Welcome-фуршет", desc: "ул. Архитектора Свиязева 35, банкетный зал «Венеция»" },
-    { time: "15:00", title: "Торжественная церемония", desc: "ул. Архитектора Свиязева 35, банкетный зал «Венеция»" },
-    { time: "15:30", title: "Праздничный банкет", desc: "ул. Архитектора Свиязева 35, банкетный зал «Венеция»" },
-  ];
+const timing = [
+  { time: "14:00", text: "— фуршет: можно пообщаться, выпить аперитив и немного расслабиться перед главным моментом." },
+  { time: "14:40", text: "— торжественная регистрация: именно здесь мы скажем друг другу «да» — будем очень рады видеть вас рядом." },
+  { time: "15:15", text: "— банкет: продолжение праздника, тосты, танцы и много приятных эмоций." },
+];
 
+export default function Print2() {
   return (
     <>
       <style>{`
@@ -27,12 +26,11 @@ export default function Print2() {
 
         .page {
           width: 559px;
-          height: 794px;
+          min-height: 794px;
           margin: 0 auto 24px;
           position: relative;
           overflow: hidden;
-          page-break-after: always;
-          break-after: page;
+          background-color: #e8ede0;
         }
 
         @media print {
@@ -43,169 +41,118 @@ export default function Print2() {
           }
         }
 
-        /* ——— СТРАНИЦА 1 ——— */
-        .page-front {
-          background: #1a1a1a;
+        .invite-single {
+          display: flex;
+          flex-direction: column;
+          padding: 8mm 9mm;
         }
 
-        .page-front .bg-photo {
-          position: absolute;
-          inset: 0;
+        .letter-greeting {
+          font-family: 'Cormorant Garamond', Georgia, serif;
+          font-size: 15pt;
+          font-weight: 600;
+          font-style: italic;
+          color: #3b2e27;
+          margin-bottom: 3mm;
+        }
+
+        .letter-text {
+          font-family: 'Montserrat', sans-serif;
+          font-size: 7pt;
+          line-height: 1.5;
+          color: #3b2e27;
+          margin-bottom: 2.5mm;
+        }
+
+        .letter-detail {
+          font-family: 'Montserrat', sans-serif;
+          font-size: 7.5pt;
+          font-weight: 600;
+          line-height: 1.5;
+          color: #3b2e27;
+          margin-bottom: 1.5mm;
+        }
+
+        .letter-photo {
+          width: 100%;
+          height: 42mm;
+          border-radius: 2mm;
+          margin: 3mm 0 4mm;
           background-image: url('https://cdn.poehali.dev/projects/7c964bb9-3c9f-4251-997c-b60e7dcb9b8e/bucket/e99b8781-80de-4f77-9a69-26df3eb6643b.jpg');
           background-size: cover;
           background-position: center top;
+          filter: grayscale(1) brightness(0.6) contrast(0.95);
           -webkit-print-color-adjust: exact;
           print-color-adjust: exact;
         }
 
-        .page-front .bg-overlay {
-          position: absolute;
-          inset: 0;
-          background: linear-gradient(to bottom, rgba(0,0,0,0.62) 0%, rgba(0,0,0,0.22) 55%, rgba(0,0,0,0.05) 100%);
-          -webkit-print-color-adjust: exact;
-          print-color-adjust: exact;
-        }
-
-        .page-front .content {
-          position: relative;
-          z-index: 10;
-          height: 100%;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          text-align: center;
-          padding: 12mm 10mm;
-        }
-
-        .front-label {
+        .letter-subheading {
           font-family: 'Montserrat', sans-serif;
-          font-size: 7pt;
-          letter-spacing: 0.4em;
+          font-size: 8pt;
+          font-weight: 600;
+          letter-spacing: 0.15em;
           text-transform: uppercase;
-          color: rgba(255,255,255,0.85);
-          text-shadow: 0 1px 6px rgba(0,0,0,0.4);
-          margin-bottom: 6mm;
+          color: #3b2e27;
+          margin-bottom: 2.5mm;
         }
 
-        .front-names {
-          font-family: 'Cormorant Garamond', Georgia, serif;
-          font-size: 48pt;
-          font-weight: 700;
-          font-style: italic;
-          color: #fff;
-          text-shadow: 0 2px 20px rgba(0,0,0,0.3);
-          line-height: 1.05;
-          letter-spacing: -0.01em;
+        .timing-item {
+          display: flex;
+          gap: 2.5mm;
+          align-items: baseline;
+          margin-bottom: 2mm;
         }
 
-        .front-date {
+        .timing-time {
           font-family: 'Montserrat', sans-serif;
-          font-size: 13pt;
-          letter-spacing: 0.3em;
-          font-weight: 300;
-          color: rgba(255,255,255,0.8);
-          text-shadow: 0 1px 6px rgba(0,0,0,0.4);
-          margin-top: 6mm;
-        }
-
-        /* ——— СТРАНИЦА 2 ——— */
-        .page-back {
-          background-color: #c8d0be;
-          display: flex;
-          flex-direction: row;
-          -webkit-print-color-adjust: exact;
-          print-color-adjust: exact;
-        }
-
-        .back-left {
-          flex: 1;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          padding: 10mm 7mm 10mm 9mm;
-        }
-
-        .back-right {
-          width: 55mm;
+          font-size: 7.5pt;
+          font-weight: 600;
+          color: #a67c5b;
+          min-width: 10mm;
+          text-align: right;
           flex-shrink: 0;
-          background-image: url('https://cdn.poehali.dev/projects/7c964bb9-3c9f-4251-997c-b60e7dcb9b8e/bucket/38d34505-5d32-45a9-a836-a8ca550c1b18.jpg');
-          background-size: cover;
-          background-position: center;
-          -webkit-print-color-adjust: exact;
-          print-color-adjust: exact;
         }
 
-        .back-section-title {
+        .timing-text {
           font-family: 'Montserrat', sans-serif;
           font-size: 7pt;
-          letter-spacing: 0.3em;
-          text-transform: uppercase;
-          font-weight: 600;
-          color: #000;
-          margin-bottom: 5mm;
+          line-height: 1.5;
+          color: #3b2e27;
         }
 
-        .programme-item {
-          display: flex;
-          gap: 4mm;
-          align-items: flex-start;
-          border-bottom: 0.5px solid rgba(0,0,0,0.15);
-          padding-bottom: 4mm;
-          margin-bottom: 4mm;
-        }
-
-        .programme-time {
+        .letter-closing {
           font-family: 'Montserrat', sans-serif;
-          font-size: 10pt;
+          font-size: 7.5pt;
           font-weight: 600;
-          color: #000;
-          min-width: 12mm;
+          color: #3b2e27;
+          margin-top: 2mm;
+          margin-bottom: 1.5mm;
         }
 
-        .programme-title {
-          font-family: 'Montserrat', sans-serif;
-          font-size: 10pt;
-          font-weight: 600;
-          color: #000;
+        .letter-signature {
+          font-family: 'Cormorant Garamond', Georgia, serif;
+          font-size: 11pt;
+          font-style: italic;
+          color: #3b2e27;
           line-height: 1.3;
         }
 
-        .programme-desc {
-          font-family: 'Montserrat', sans-serif;
-          font-size: 7.5pt;
-          color: rgba(0,0,0,0.5);
-          margin-top: 1mm;
-          line-height: 1.4;
-        }
-
-        .lottery-box {
-          border-radius: 3mm;
-          padding: 4mm 5mm;
-          margin-top: 2mm;
-          -webkit-print-color-adjust: exact;
-          print-color-adjust: exact;
-          background-color: #b0baa4;
-        }
-
-        .lottery-text {
-          font-family: 'Montserrat', sans-serif;
-          font-size: 8pt;
-          color: #000;
-          line-height: 1.5;
-          font-weight: 500;
+        .divider {
+          width: 20mm;
+          height: 1px;
+          background: #a67c5b;
+          opacity: 0.4;
+          margin: 3mm 0;
         }
 
         .dresscode-bar {
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          right: 0;
           background-color: #b0baa4;
-          padding: 3mm 9mm;
+          border-radius: 2mm;
+          padding: 3mm 4mm;
           display: flex;
           align-items: center;
-          gap: 4mm;
+          gap: 3mm;
+          margin-top: 3mm;
           -webkit-print-color-adjust: exact;
           print-color-adjust: exact;
         }
@@ -284,51 +231,54 @@ export default function Print2() {
         >
           Распечатать / Сохранить PDF
         </button>
-        <p style={{ marginTop: '8px', fontSize: '12px' }}>2 страницы A5 · Двусторонняя печать · Выберите «Без полей»</p>
+        <p style={{ marginTop: '8px', fontSize: '12px' }}>1 страница A5 · При печати выберите «Без полей»</p>
       </div>
 
-      {/* Страница 1 — лицевая */}
-      <div className="page page-front">
-        <div className="bg-photo" />
-        <div className="bg-overlay" />
-        <div className="content">
-          <p className="front-label">приглашение на торжество</p>
-          <h1 className="front-names">Глеб & Вероника</h1>
-          <p className="front-date">11.09.2026</p>
-        </div>
-      </div>
+      <div className="page">
+        <div className="invite-single">
+          <p className="letter-greeting">Дорогие [имя гостя/гости]! ❤️</p>
+          <p className="letter-text">
+            Спасибо, что хотите разделить с нами такой важный и радостный день. Мы очень ждём вас на нашей свадьбе и хотим подтвердить детали, чтобы всё прошло идеально.
+          </p>
+          <p className="letter-detail">💍 Дата: 11.09.2026</p>
+          <p className="letter-detail">📍 Место: Банкетный зал «Венеция», ул. Свиязева 35</p>
 
-      {/* Страница 2 — оборотная */}
-      <div className="page page-back">
-        <div className="back-left">
-          <p className="back-section-title">Программа торжества</p>
-          <div>
-            {programme.map((item) => (
-              <div key={item.time} className="programme-item">
-                <span className="programme-time">{item.time}</span>
-                <div>
-                  <p className="programme-title">{item.title}</p>
-                  {item.desc && <p className="programme-desc">{item.desc}</p>}
+          <div className="letter-photo" />
+
+          <p className="letter-text">
+            Важная деталь: нам хотелось сделать этот день максимально комфортным для всех, поэтому у нас будет выездная регистрация — ехать в ЗАГС не нужно. Всё самое трогательное и важное произойдёт прямо на нашей площадке.
+          </p>
+          <p className="letter-text">
+            На площадке будут работать наши свадебные координаторы — они помогут сориентироваться, подскажут, где что находится, и решат любые возникающие вопросы. По всем организационным моментам, пожалуйста, обращайтесь к ним.
+          </p>
+          <p className="letter-detail">📞 Контактный номер координатора: +79504787050 София</p>
+
+          <div className="divider" />
+
+          <p className="letter-subheading">Тайминг дня</p>
+          {timing.map((t) => (
+            <div key={t.time} className="timing-item">
+              <span className="timing-time">{t.time}</span>
+              <span className="timing-text">{t.text}</span>
+            </div>
+          ))}
+
+          <p className="letter-closing">До встречи в самый счастливый день! 🥂</p>
+          <p className="letter-signature">
+            С любовью,<br />
+            Вероника и Глеб
+          </p>
+
+          <div className="dresscode-bar">
+            <span className="dresscode-bar-label">Дресс-код</span>
+            <div className="dresscode-bar-colors">
+              {dresscodeColors.map((c) => (
+                <div key={c.hex} className="dresscode-bar-swatch">
+                  <div className="dresscode-bar-circle" style={{ backgroundColor: c.hex }} />
+                  <span className="dresscode-bar-name">{c.label}</span>
                 </div>
-              </div>
-            ))}
-          </div>
-          <div className="lottery-box">
-            <p className="lottery-text">
-              Просим каждого взять с собой лотерейный билет: вход в банкетный зал состоится по нему. Перед входом, пожалуйста, напишите на билете свой номер телефона. Зачем? Узнаете на торжестве)
-            </p>
-          </div>
-        </div>
-        <div className="back-right" />
-        <div className="dresscode-bar">
-          <span className="dresscode-bar-label">Дресс-код</span>
-          <div className="dresscode-bar-colors">
-            {dresscodeColors.map((c) => (
-              <div key={c.hex} className="dresscode-bar-swatch">
-                <div className="dresscode-bar-circle" style={{ backgroundColor: c.hex }} />
-                <span className="dresscode-bar-name">{c.label}</span>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </div>
