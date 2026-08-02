@@ -30,7 +30,7 @@ export default function Print2() {
           margin: 0 auto 24px;
           position: relative;
           overflow: hidden;
-          background-color: #e8ede0;
+          background-color: #d8dccd;
         }
 
         @media print {
@@ -44,7 +44,10 @@ export default function Print2() {
         .invite-single {
           display: flex;
           flex-direction: column;
-          padding: 8mm 9mm;
+        }
+
+        .invite-text-block {
+          padding: 6mm 9mm 8mm;
         }
 
         .letter-greeting {
@@ -75,10 +78,8 @@ export default function Print2() {
 
         .letter-photo {
           width: 100%;
-          height: 42mm;
-          border-radius: 2mm;
-          margin: 3mm 0 4mm;
-          background-image: url('https://cdn.poehali.dev/projects/7c964bb9-3c9f-4251-997c-b60e7dcb9b8e/bucket/e99b8781-80de-4f77-9a69-26df3eb6643b.jpg');
+          height: 55mm;
+          background-image: url('https://cdn.poehali.dev/projects/7c964bb9-3c9f-4251-997c-b60e7dcb9b8e/bucket/371e9636-dbde-40bc-a439-513ff8d08a40.jpg');
           background-size: cover;
           background-position: center top;
           filter: grayscale(1) brightness(0.6) contrast(0.95);
@@ -236,48 +237,50 @@ export default function Print2() {
 
       <div className="page">
         <div className="invite-single">
-          <p className="letter-greeting">Дорогие [имя гостя/гости]! ❤️</p>
-          <p className="letter-text">
-            Спасибо, что хотите разделить с нами такой важный и радостный день. Мы очень ждём вас на нашей свадьбе и хотим подтвердить детали, чтобы всё прошло идеально.
-          </p>
-          <p className="letter-detail">💍 Дата: 11.09.2026</p>
-          <p className="letter-detail">📍 Место: Банкетный зал «Венеция», ул. Свиязева 35</p>
-
           <div className="letter-photo" />
 
-          <p className="letter-text">
-            Важная деталь: нам хотелось сделать этот день максимально комфортным для всех, поэтому у нас будет выездная регистрация — ехать в ЗАГС не нужно. Всё самое трогательное и важное произойдёт прямо на нашей площадке.
-          </p>
-          <p className="letter-text">
-            На площадке будут работать наши свадебные координаторы — они помогут сориентироваться, подскажут, где что находится, и решат любые возникающие вопросы. По всем организационным моментам, пожалуйста, обращайтесь к ним.
-          </p>
-          <p className="letter-detail">📞 Контактный номер координатора: +79504787050 София</p>
+          <div className="invite-text-block">
+            <p className="letter-greeting">Дорогие [имя гостя/гости]! ❤️</p>
+            <p className="letter-text">
+              Спасибо, что хотите разделить с нами такой важный и радостный день. Мы очень ждём вас на нашей свадьбе и хотим подтвердить детали, чтобы всё прошло идеально.
+            </p>
+            <p className="letter-detail">💍 Дата: 11.09.2026</p>
+            <p className="letter-detail">📍 Место: Банкетный зал «Венеция», ул. Свиязева 35</p>
 
-          <div className="divider" />
+            <p className="letter-text" style={{ marginTop: '3mm' }}>
+              Важная деталь: нам хотелось сделать этот день максимально комфортным для всех, поэтому у нас будет выездная регистрация — ехать в ЗАГС не нужно. Всё самое трогательное и важное произойдёт прямо на нашей площадке.
+            </p>
+            <p className="letter-text">
+              На площадке будут работать наши свадебные координаторы — они помогут сориентироваться, подскажут, где что находится, и решат любые возникающие вопросы. По всем организационным моментам, пожалуйста, обращайтесь к ним.
+            </p>
+            <p className="letter-detail">📞 Контактный номер координатора: +79504787050 София</p>
 
-          <p className="letter-subheading">Тайминг дня</p>
-          {timing.map((t) => (
-            <div key={t.time} className="timing-item">
-              <span className="timing-time">{t.time}</span>
-              <span className="timing-text">{t.text}</span>
-            </div>
-          ))}
+            <div className="divider" />
 
-          <p className="letter-closing">До встречи в самый счастливый день! 🥂</p>
-          <p className="letter-signature">
-            С любовью,<br />
-            Вероника и Глеб
-          </p>
+            <p className="letter-subheading">Тайминг дня</p>
+            {timing.map((t) => (
+              <div key={t.time} className="timing-item">
+                <span className="timing-time">{t.time}</span>
+                <span className="timing-text">{t.text}</span>
+              </div>
+            ))}
 
-          <div className="dresscode-bar">
-            <span className="dresscode-bar-label">Дресс-код</span>
-            <div className="dresscode-bar-colors">
-              {dresscodeColors.map((c) => (
-                <div key={c.hex} className="dresscode-bar-swatch">
-                  <div className="dresscode-bar-circle" style={{ backgroundColor: c.hex }} />
-                  <span className="dresscode-bar-name">{c.label}</span>
-                </div>
-              ))}
+            <p className="letter-closing">До встречи в самый счастливый день! 🥂</p>
+            <p className="letter-signature">
+              С любовью,<br />
+              Вероника и Глеб
+            </p>
+
+            <div className="dresscode-bar">
+              <span className="dresscode-bar-label">Дресс-код</span>
+              <div className="dresscode-bar-colors">
+                {dresscodeColors.map((c) => (
+                  <div key={c.hex} className="dresscode-bar-swatch">
+                    <div className="dresscode-bar-circle" style={{ backgroundColor: c.hex }} />
+                    <span className="dresscode-bar-name">{c.label}</span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
