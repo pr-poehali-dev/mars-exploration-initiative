@@ -30,7 +30,12 @@ export default function Print2() {
           margin: 0 auto 24px;
           position: relative;
           overflow: hidden;
-          background-color: #d8dccd;
+          background-color: #ece7dc;
+          background-image: url('https://cdn.poehali.dev/projects/7c964bb9-3c9f-4251-997c-b60e7dcb9b8e/bucket/0f796cec-3b18-4610-88df-42f66d4a026a.png');
+          background-size: cover;
+          background-position: center;
+          -webkit-print-color-adjust: exact;
+          print-color-adjust: exact;
         }
 
         @media print {
@@ -47,7 +52,7 @@ export default function Print2() {
         }
 
         .invite-text-block {
-          padding: 6mm 9mm 8mm;
+          padding: 26mm 13mm 20mm;
         }
 
         .letter-greeting {
@@ -76,15 +81,22 @@ export default function Print2() {
           margin-bottom: 1.5mm;
         }
 
-        .letter-photo {
-          width: 100%;
-          height: 55mm;
-          background-image: url('https://cdn.poehali.dev/projects/7c964bb9-3c9f-4251-997c-b60e7dcb9b8e/bucket/371e9636-dbde-40bc-a439-513ff8d08a40.jpg');
-          background-size: cover;
-          background-position: center top;
-          filter: grayscale(1) brightness(0.6) contrast(0.95);
+        .key-info-box {
+          background-color: rgba(255,255,255,0.75);
+          border-radius: 2mm;
+          padding: 4mm 5mm;
+          margin: 3mm 0 4mm;
           -webkit-print-color-adjust: exact;
           print-color-adjust: exact;
+        }
+
+        .key-info-box .letter-detail {
+          font-size: 8pt;
+          margin-bottom: 2mm;
+        }
+
+        .key-info-box .letter-detail:last-child {
+          margin-bottom: 0;
         }
 
         .letter-subheading {
@@ -147,15 +159,10 @@ export default function Print2() {
         }
 
         .dresscode-bar {
-          background-color: #b0baa4;
-          border-radius: 2mm;
-          padding: 3mm 4mm;
           display: flex;
           align-items: center;
           gap: 3mm;
-          margin-top: 3mm;
-          -webkit-print-color-adjust: exact;
-          print-color-adjust: exact;
+          margin-top: 4mm;
         }
 
         .dresscode-bar-label {
@@ -164,7 +171,7 @@ export default function Print2() {
           letter-spacing: 0.2em;
           text-transform: uppercase;
           font-weight: 600;
-          color: #000;
+          color: #3b2e27;
           white-space: nowrap;
         }
 
@@ -237,23 +244,24 @@ export default function Print2() {
 
       <div className="page">
         <div className="invite-single">
-          <div className="letter-photo" />
-
           <div className="invite-text-block">
             <p className="letter-greeting">Дорогие [имя гостя/гости]! ❤️</p>
             <p className="letter-text">
               Спасибо, что хотите разделить с нами такой важный и радостный день. Мы очень ждём вас на нашей свадьбе и хотим подтвердить детали, чтобы всё прошло идеально.
             </p>
-            <p className="letter-detail">💍 Дата: 11.09.2026</p>
-            <p className="letter-detail">📍 Место: Банкетный зал «Венеция», ул. Свиязева 35</p>
 
-            <p className="letter-text" style={{ marginTop: '3mm' }}>
+            <div className="key-info-box">
+              <p className="letter-detail">💍 Дата: 11.09.2026</p>
+              <p className="letter-detail">📍 Место: Банкетный зал «Венеция», ул. Свиязева 35</p>
+              <p className="letter-detail">📞 Контактный номер координатора: +79504787050 София</p>
+            </div>
+
+            <p className="letter-text">
               Важная деталь: нам хотелось сделать этот день максимально комфортным для всех, поэтому у нас будет выездная регистрация — ехать в ЗАГС не нужно. Всё самое трогательное и важное произойдёт прямо на нашей площадке.
             </p>
             <p className="letter-text">
               На площадке будут работать наши свадебные координаторы — они помогут сориентироваться, подскажут, где что находится, и решат любые возникающие вопросы. По всем организационным моментам, пожалуйста, обращайтесь к ним.
             </p>
-            <p className="letter-detail">📞 Контактный номер координатора: +79504787050 София</p>
 
             <div className="divider" />
 
